@@ -7,7 +7,6 @@ version = '1.0-SNAPSHOT'
 
 sourceCompatibility = 11
 
-// кодировка файлов (если используете русский язык в файлах)
 compileJava.options.encoding = "UTF-8"
 compileTestJava.options.encoding = "UTF-8"
 
@@ -16,17 +15,8 @@ repositories {
 }
 
 dependencies {
-    //implementation 'org.seleniumhq.webdriver:webdriver-chrome:0.9.7376'
-    //implementation 'org.seleniumhq.webdriver:webdriver-chrome:0.9.7376'
     testImplementation 'org.junit.jupiter:junit-jupiter:5.9.0'
-    // библиотека com.codeborne:selenide используется при построении проекта с использованием Selenide
-   // testImplementation 'com.codeborne:selenide:6.13.0'
-
-
-    // при реализации проекте с использованием Selenium вместо библиотеки com.codeborne:selenide подключаются
     testImplementation 'org.seleniumhq.selenium:selenium-java:4.8.3'
-  //  testImplementation 'io.github.bonigarcia:webdrivermanager'
-   //  testImplementation 'org.seleniumhq.selenium:selenium-java:4.11.0'
     testImplementation 'io.github.bonigarcia:webdrivermanager:5.4.1'
 
 }

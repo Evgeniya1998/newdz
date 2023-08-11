@@ -23,12 +23,6 @@ public class CollbackTest {
         WebDriverManager.chromedriver().setup();
     }
 
-    //  @BeforeAll
-    // static void setUpAll() {
-
-    // System.setProperty("webdriver.chrome.driver", "C:\\webdrivers\\chromedriver.exe");
-    // }
-
     @BeforeEach
     public void beforeEach() {
         ChromeOptions options = new ChromeOptions();
@@ -46,16 +40,16 @@ public class CollbackTest {
     }
 
     @Test
-    void shouldTestV2() throws InterruptedException {
+    void shouldTestV2() {
         driver.get("http://localhost:9999");
-        WebElement form = driver.findElement(By.cssSelector("[class='form form_size_m form_theme_alfa-on-white']"));
-        form.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Евгения");
-        form.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+79270000000");
-        form.findElement(By.cssSelector("[data-test-id=agreement]")).click();
-        form.findElement(By.cssSelector("[class='button button_view_extra button_size_m button_theme_alfa-on-white']")).click();
-        String text = driver.findElement(By.className("Success_successBlock__2L3Cw")).getText();
+        // WebElement form = driver.findElement(By.cssSelector("[class='form form_size_m form_theme_alfa-on-white']"));
+        driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Евгения");
+        driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+79270000000");
+        driver.findElement(By.cssSelector("[data-test-id=agreement]")).click();
+        driver.findElement(By.cssSelector("button.button")).click();
+        String text = driver.findElement(By.cssSelector("[data-test-id=order-success]")).getText();
         assertEquals("Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время.", text.trim());
-        Thread.sleep(5000);
+
     }
 
 }
